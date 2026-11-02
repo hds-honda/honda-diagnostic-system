@@ -1,0 +1,16 @@
+[package]
+name = "common"
+version = "0.1.0"
+authors = ["Ashcon Mohseninia"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bit_field="0.10.1"
+
+[dependencies.serde_with]
+version = "1.6.2"
+features = [ "hex" ]
