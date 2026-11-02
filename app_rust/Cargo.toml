@@ -1,0 +1,48 @@
+[package]
+name = "openvehiclediag"
+version = "1.0.5"
+description = "pen Vehicle Diagnostics (OVD) is a Rust-based open source vehicle ECU diagnostic platform."
+edition = "2018"
+
+[package.metadata.bundle]
+version = "0.6.0"
+authors = ["ashcon"]
+edition = "2018"
+description = """
+Open Vehicle Diagnostics (OVD) is a Rust-based open source vehicle ECU diagnostic platform that makes use of the J2534-2 protocol.
+
+The idea is to make diagnosing and exploring your cars diagnostics functions possible, via an API, thus allowing the ability for you to reprogram ECU’s without the need for a special dealer-only tool.
+"""
+
+
+[dependencies]
+iced = { version = "0.3.0", features = ["tokio", "image", "canvas"] }
+iced_wgpu = "0.4.0"
+iced_native = "0.4.0"
+iced_graphics = "0.2.0"
+serde_json = "1.0"
+libloading = "0.7.0"
+libc = "0.2.79"
+serde_derive = "1.0.80"
+lazy_static="1.4.0"
+serde = {version = "1.0.80", features = ["derive"]}
+common = { path = "../common" }
+j2534_rust = {git = "https://github.com/rnd-ash/J2534-Rust", branch="main" }
+bitfield = "0.13.2"
+nfd = "0.0.4"
+hex-serde = "0.1.0"
+chrono = "0.4.19"
+hex = "0.4.2"
+image = "0.23.12"
+dialog = "0.3.0"
+backtrace = "0.3.59"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.8"
+
+[target.'cfg(unix)'.dependencies]
+shellexpand = "2.0.0"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+socketcan = "1.7.0"
+socketcan-isotp = "0.1.1"

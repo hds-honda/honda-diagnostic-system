@@ -1,0 +1,24 @@
+[package]
+name = "cbf_parser"
+version = "0.1.0"
+authors = ["Ashcon Mohseninia"]
+edition = "2021"
+
+[[bin]]
+name = "cbf_parser"
+path = "src/main.rs"
+
+[lib]
+name = "cbf_parser"
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde_json = "1.0"
+xml-rs = "0.8.3"
+binary-reader="0.3.0"
+encoding_rs = "0.8.29"
+common = { path = "../common" }
+serde = {version = "1.0.80", features = ["derive"]}
+hyper = "^ 0.10"
